@@ -23,7 +23,7 @@ class GameRules
         {
             return 0;
         }
-        else if ((userMove + halfSize) % movesCount == computerMove)
+        else if ((userMove + halfSize) % movesCount == computerMove || (computerMove + halfSize) % movesCount == userMove)
         {
             return 1;
         }
