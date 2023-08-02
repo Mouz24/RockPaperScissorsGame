@@ -119,16 +119,10 @@ class Program
         }
 
         List<string> moves = args.ToList();
-        for (int i = 0; i < moves.Count; i++)
+        if (moves.Distinct().Count() != moves.Count)
         {
-            for (int j = 1; j < moves.Count; j++)
-            {
-                if (moves[i] == moves[j])
-                {
-                    Console.WriteLine("Moves should be unique");
-                    return;
-                }
-            }
+            Console.WriteLine("Moves should be unique.");
+            return;
         }
 
         GameRules rules = new GameRules(moves);
